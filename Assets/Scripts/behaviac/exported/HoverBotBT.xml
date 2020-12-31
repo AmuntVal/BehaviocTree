@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: HoverBotBT.xml-->
+<behavior name="HoverBotBT" agenttype="HoverBotAgent" version="5">
+  <node class="Selector" id="0">
+    <node class="Sequence" id="2">
+      <node class="Condition" id="3">
+        <property Operator="Equal" />
+        <property Opl="Self.HoverBotAgent::HasTarget()" />
+        <property Opr="const bool false" />
+      </node>
+      <node class="Action" id="10">
+        <property Method="Self.HoverBotAgent::DoPatrol()" />
+        <property ResultOption="BT_INVALID" />
+      </node>
+    </node>
+    <node class="Selector" id="4">
+      <node class="Sequence" id="7">
+        <node class="Condition" id="1">
+          <property Operator="Greater" />
+          <property Opl="Self.HoverBotAgent::GetTargetDist()" />
+          <property Opr="const float 10" />
+        </node>
+        <node class="Action" id="8">
+          <property Method="Self.HoverBotAgent::DoChase()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+      </node>
+      <node class="Sequence" id="5">
+        <node class="Condition" id="9">
+          <property Operator="Greater" />
+          <property Opl="Self.HoverBotAgent::GetTargetDist()" />
+          <property Opr="const float 3" />
+        </node>
+        <node class="Action" id="14">
+          <property Method="Self.HoverBotAgent::DoChase()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+        <node class="Action" id="13">
+          <property Method="Self.HoverBotAgent::DoAttack()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+      </node>
+      <node class="Sequence" id="6">
+        <node class="Action" id="11">
+          <property Method="Self.HoverBotAgent::StopChase()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+        <node class="Action" id="12">
+          <property Method="Self.HoverBotAgent::DoAttack()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+      </node>
+    </node>
+  </node>
+</behavior>
